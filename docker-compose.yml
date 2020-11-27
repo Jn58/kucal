@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  ku_calendar:
+    build:
+      context: build
+    restart: always
+    volumes:
+      - "./app:/app"
+      - "./log:/var/log/kucal"
