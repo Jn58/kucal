@@ -166,6 +166,8 @@ class KU_Calendar:
 
     def sync_all_sem(self, url, cal_id):
         sems = self.get_sem_list(url)
+        year = datetime.datetime.now().year
+        sems = [sem for sem in sems if sem[0] >= year]
         
         for year, sem in sems:
             self.sync(url, cal_id, year, sem)
